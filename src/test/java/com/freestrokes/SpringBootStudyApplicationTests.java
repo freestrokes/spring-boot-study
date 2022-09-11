@@ -12,7 +12,7 @@ import static org.hamcrest.Matchers.is;
 @RunWith(SpringRunner.class)
 @SpringBootTest(
 	value = "value=test",
-	properties = {"property.value=propertyTest"},
+//	properties = {"property.value=propertyTest"},
 	classes = {SpringBootStudyApplication.class},
 	webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT
 )
@@ -21,13 +21,13 @@ public class SpringBootStudyApplicationTests {
 	@Value("${value}")
 	private String value;
 
-	@Value("${property.value}")
-	private String propertyValue;
+//	@Value("${property.value}")
+//	private String propertyValue;
 
 	@Test
 	public void contextLoads() {
 		assertThat(value, is("test"));
-		assertThat(propertyValue, is("propertyTest"));
+//		assertThat(propertyValue, is("propertyTest"));
 	}
 
 }
