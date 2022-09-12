@@ -31,7 +31,8 @@ public class BookControllerTests {
 
     @Test
     public void bookMvcTest() throws Exception {
-        Book book = new Book(1, "Spring Boot Book", LocalDateTime.now());
+        Book book = new Book("Spring Boot Book", LocalDateTime.now());
+
         given(
             bookService.getBookList())
                 .willReturn(Collections.singletonList(book)
