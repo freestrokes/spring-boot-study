@@ -4,26 +4,39 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
+@Entity
+@Table
 //@NoArgsConstructor
 //@Getter
 public class Book {
 
+    @Id
+    @GeneratedValue
     private Integer idx;
+
+    @Column
     private String title;
+
+    @Column
     private LocalDateTime publishedAt;
 
-//    @Builder
-//    public Book(
-//        Integer idx,
-//        String title,
-//        LocalDateTime publishedAt
-//    ) {
-//        this.idx = idx;
-//        this.title = title;
-//        this.publishedAt = publishedAt;
-//    }
+    public Book() {
+    }
+
+    public int getIdx() {
+        return idx;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public LocalDateTime getPublishedAt() {
+        return publishedAt;
+    }
 
     public Book(int idx, String title, LocalDateTime publishedAt) {
     }
@@ -59,5 +72,17 @@ public class Book {
             return new Book(idx, title, publishedAt);
         }
     }
+
+    // lombok 설정
+//    @Builder
+//    public Book(
+//        Integer idx,
+//        String title,
+//        LocalDateTime publishedAt
+//    ) {
+//        this.idx = idx;
+//        this.title = title;
+//        this.publishedAt = publishedAt;
+//    }
 
 }
