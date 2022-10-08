@@ -1,2 +1,2 @@
-# spring-boot-study
-spring-boot-study
+# spring-boot-test
+spring-boot-test
